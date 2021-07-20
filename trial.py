@@ -1,4 +1,4 @@
-import requests
+''''import requests
 import json
 
 url = "https://rawg-video-games-database.p.rapidapi.com/games"
@@ -14,4 +14,4 @@ response = requests.get(url, headers=headers, params=key)
 
 data = response.json()
 for i in range(len(data['results'])):
-	print(data['results'][i]['name'], data['results'][i]['released'])
+	print(data['results'][i]['name'], data['results'][i]['released'])'''
