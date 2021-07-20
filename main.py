@@ -15,9 +15,10 @@ app = Flask(__name__)
 def home():
 	return render_template("home.html")
 
-# @app.route("/prices")
-# def prices():
-# 	return render_template("prices.html")
+
+@app.route("/trending")
+def trending():
+	return render_template("trending.html")
 
 # @app.route("/trending")
 # def trending():

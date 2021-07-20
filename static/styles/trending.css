@@ -6,8 +6,6 @@ body {
   
 }
 
-/* nav bar */
-
 .topnav {
   overflow: hidden;
   background-color: #243f40;
@@ -31,27 +29,4 @@ body {
 /* .topnav a.active {
   background-color: #329ea8;
   color: white; */
-}
-
-/*  */
-
-
-/* title */
-
-.header {
-  background-color: #f7f7f7;
-}
-
-.header ul a{
-/*   background-color: #f7f7f7; */
-/*   font-size: 70px;
-  text-align: center; */
-  
-    color: #000;
-    display: block;
-    padding: 70px 65px 0 0;
-    text-decoration: none;
-    width:100%;
-    text-align:center;
-    font-size: 70px;
 }

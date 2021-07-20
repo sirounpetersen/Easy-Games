@@ -5,26 +5,27 @@
   <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
 
-<!--     <link rel="stylesheet" href="home.css"> -->
      
     <title>Easy Games</title>
   </head>
   <body>
     
-    <h1>Welcome To Easy Games!</h1>
+<!--  navigation bar    -->
+    <div class="topnav">
+      <p><a href="{{ url_for('trending') }}">Trending</a></p>
+      <a class="active" href="#home">Home</a>
+      
+    </div>
 
     
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+    <div class ="header">
+      
+      <p><a><ul>
+        Welcome To Easy Games!
+        </ul></a></p>
     </div>
-
-    <div style="padding-left:16px">
-      <h2>Top Navigation Example</h2>
-      <p>Some content..</p>
-    </div>
+    
+    
 
   </body>
   

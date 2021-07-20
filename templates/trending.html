@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+
+<html>
+  
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/trending.css') }}">
+
+     
+    <title>Easy Games</title>
+  </head>
+  <body>
+    
+<!--  navigation bar    -->
+    <div class="topnav">
+      <p><a href="{{ url_for('trending') }}">Trending</a></p>
+ 
+      <p><a href="{{ url_for('home') }}">Home</a></p>
+<!--       <a class="active" href="#home">Home</a> -->
+      
+    </div>
+
+<!--     <div style="padding-left:16px">
+      <h2>Top Navigation Example</h2>
+      <p>Some content..</p>
+    </div> -->
+    
+    <h1>Trending</h1>
+
+  </body>
+  
+</html>
