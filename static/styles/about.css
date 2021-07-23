@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #21616e;
-	text-align:center;
+  
 }
 
 .topnav {
@@ -107,37 +107,3 @@ body {
 .dropdown button:hover{
     background-color: #329ea8;
 }
-
-/* 
-.container {
-  color: white;
-  
-}
-
-.container a img{
-  width: 500px;
-  height: 250px;
-}
- */
-
-* {
-  box-sizing: border-box;
-}
-/*
-.column {
-  float: left;
-  width: 13.33%;
-  padding: 5px;
-}
-
-.column a{
-  color: white;
-}*/
-
-
-/* Clearfix (clear floats) */
-/*.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}*/

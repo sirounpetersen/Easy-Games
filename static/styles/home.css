@@ -2,21 +2,22 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Comfortaa,Arial, Helvetica, sans-serif;
   background-color: #21616e;
   
 }
 
-/* nav bar */
-
 .topnav {
-  overflow: hidden;
   background-color: #243f40;
-  margin-left: 1360px;
+  overflow: hidden;
+	position:fixed;
+	top:0;
+	width:100%;
 }
 
+/* Style the links inside the navigation bar */
 .topnav a {
-  float: right;
+  float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -24,25 +25,24 @@ body {
   font-size: 17px;
 }
 
+/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #329ea8;
   color: white;
 }
 
-/* .topnav a.active {
-  background-color: #329ea8;
-  color: white; */
-}
+
+/*  */
 
 /*  */
 
 
-/* title */
+/* title 
 
 .header {
-  background-color: #f7f7f7;
+  background-color: black;
 }
-
+*/
 .header ul a{
   
     color: white;
@@ -57,7 +57,7 @@ body {
 /* description */
 
 .description a{
-      color: white;
+    color: gold;
     display: block;
     padding: 70px 65px 0 0;
     text-decoration: none;
@@ -68,12 +68,12 @@ body {
 }
 
 
-/*  */drop down
+/*  drop down */
 
 
 .dropdown {
-  background-color: white;
-      color: white;
+    /*background-color: white; */
+    color: white;
     display: block;
     padding: 70px 65px 0 0;
     text-decoration: none;
@@ -81,11 +81,13 @@ body {
     text-align:center;
     font-size: 20px;
 }
+
+
 .dropdown ul a{
 
     color: white;
     display: block;
-    padding: 70px 65px 0 0;
+    padding: 0px 65px 0 0;
     text-decoration: none;
     width:100%;
     text-align:center;

@@ -20,29 +20,21 @@
     <div class = "header">
 
       <p><a><ul>
-        Trending Games!
+        Platform Based Games!
         </ul></a></p>
     </div>
-    
-    
 			
 <!--    -->
-      
-			<div class = "row" id="diplay">
-
-              {% for names, images in both %}
-
-                <div class = "column">
-                 
-                  <a id="image_name" style="color:gold; font-size:30px;font-family:'Courier New"> {{ names}} </a>
-                  <p id="image_card"> <img src={{images}} width="1100" height="550"></p> <br>
-                </div>
-           
-            {% endfor %} 
-      
-            
+      <style>
+			div {text-align: center;}
+			</style>
+			<div class = "display" style="color:gold; font-size:25px;font-family:'Courier New'">
+						<h2 style="text-decoration: underline;"> {{console}} </h2>
+              {% for game in games %}
+           			<p> {{game}}</p>
+            	{% endfor %} 
+         
 			</div>
       
   </body>
 </html>
-

@@ -1,0 +1,52 @@
+			
+<!DOCTYPE HTML>
+
+<html>
+  
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/search.css') }}">
+<!-- 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nav.css') }}"> -->
+     
+    <title>Easy Games</title>
+  </head>
+  <body>
+		 <div class="topnav">
+			<a class="active" href="/">Home</a>
+			 <a href="/platform">Gaming Platforms</a>
+			<a href="/trending">Trending Games</a>
+			<a href="/anticipated">Upcoming Games</a>
+			<a href="/about">About Us</a>
+		</div>
+    
+	    <div class = "header">
+
+      <p><a><ul>
+        Your Game Details!
+        </ul></a></p>
+			</div>
+	    
+    
+    
+      <div class = "description">
+        
+        
+        <a> {{name}}  Average Rating: {{rate}}/100 </a>
+        <p><img src={{image}} width="1100" height="550"></p>
+        <d> {{detail}} </d> <br>
+        <a> Rating based on Platform</a>
+				<div class = "container" id = "rate">
+					
+				
+        {% for platform,platformRate in both %}
+            <p>{{platform}} players rated this game {{platformRate}}/100</p>
+        {% endfor%}
+				</div>
+        <button><a href={{website}}>Learn More</a></button>
+     </div>
+    
+    
+    
+
+  </body>
+  
+</html>

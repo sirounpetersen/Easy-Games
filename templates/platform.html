@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+
+<html>
+  
+  <head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/platform.css') }}">
+<!-- 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nav.css') }}"> -->
+     
+    <title>Easy Games</title>
+  </head>
+  <body>
+		 <div class="topnav">
+			<a class="active" href="/">Home</a>
+			 <a href="/platform">Gaming Platforms</a>
+			<a href="/trending">Trending Games</a>
+			<a href="/anticipated">Upcoming Games</a>
+			<a href="/about">About Us</a>
+		</div>
+    
+    <div class = "header">
+
+     <p><a><ul>
+        Check amazing games available for your Platform/Console
+        </ul></a></p>
+				
+  		</div>
+    <div class = "dropdown">
+    
+    <form action = "/platformGames" method ="POST">
+
+		<label for="drop">Choose a Platform:</label>
+
+			<select id="platform" name = "console">
+				<option value="Playstation 5">PS 5</option>
+				<option value="Xbox Series S/X">Xbox Series S/X</option>
+				<option value="PC">PC</option>
+        <option value="Playstation 4">PS4</option>
+        <option value="Xbox One">Xbox One</option>
+				<option value="Nintendo">Nintendo Switch</option>
+			</select>
+      <button type = "submit">Search</button>
+      
+      </form>
+
+  </div>
+  </body>
+  
+</html>

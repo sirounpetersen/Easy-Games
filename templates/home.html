@@ -1,22 +1,31 @@
 <!DOCTYPE HTML>
 
+
 <html>
   
   <head>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
-
-     
+<!-- 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nav.css') }}"> -->
     <title>Easy Games</title>
   </head>
+  
+<!--   nav bar -->
   <body>
     
-<!--  navigation bar    -->
     <div class="topnav">
+			<a class="active" href="/">Home</a>
+			 <a href="/platform">Gaming Platforms</a>
+			<a href="/trending">Trending Games</a>
+			<a href="/anticipated">Upcoming Games</a>
+			<a href="/about">About Us</a>
+		</div>
+<!--  navigation bar    
+<div class="topnav">
       <p><a href="{{ url_for('trending') }}">Trending</a></p>
       <a class="active" href="#home">Home</a>
       
     </div>
-
+-->
     
     <div class = "header">
       
@@ -26,7 +35,7 @@
     </div>
     
     <div class = "description">
-      <a>To look up a video game's price, choose a console and enter the name to search!</a>
+      <a>Hit search to find out about your favorite video game!</a>
     </div>
     
     
@@ -34,33 +43,34 @@
     
     <div class = "dropdown">
       <p><a><ul>
+<!--       <label for="console">Choose a Console:</label>
         
-      <label for="console">Choose a console:</label>
-      <select name="console" id="console">
-        <option value="PS4">PS4</option>
-        <option value="Xbox One">Xbox One</option>
-      </select>
-      <br><br>
-      
-      
-        
-      <form id="form"> 
+      <form>
+          <select type = "select" name="console">    
+          <option value="PS4">PS4</option>
+          <option value="XboxOne">Xbox One</option>
+        </select>
+          -->
+   
+        <form action = "/search" method ="POST">
+          
         <label for="game">Enter a Video Game:</label>
-        <input type="search" id="query" name="q" placeholder="Search...">
-        
+        <input type="text" name="name" placeholder="Search..."/>
+<!--         <input type="submit" name="submit" value = "Search"/> -->
+        <button type = "submit">Search</button>
       <br><br><br>
         
-      <button>Search</button>
+<!--       <button>Search</button> -->
     </form>
-        
+       
       </ul>
       </a>
       </p>
     </div>
-    
-
-    
-    
+		<div class="More" style="color:gold;font-family:'Courier New';text-align:center;">
+				 <p>To search based on console, click the "Gaming Platform" page!</p>
+				 <p>To look at the trending games, go to the "Trending Games" page!</p>
+		</div> 
     
 
   </body>
