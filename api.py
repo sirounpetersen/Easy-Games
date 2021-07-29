@@ -1,10 +1,16 @@
-#GETTING THE MOST ANTICIPATED GAMES OF THE 2022 AND THEIR IMAGES
 #these are the most anticipated games of 2022
+
+'''
+- removing html tags from search function (game_description has tags)
+- perform unit testing (creating test functions for all the functions below)
+- performing integration testing
+
+'''
 
 import requests
 import json
 
-#getting the most anticipated games
+# GETTING THE MOST ANTICIPATED GAMES OF THE 2022 AND THEIR BACKGROUND IMAGES
 def anticipated_games():
     headers = {
     'x-rapidapi-key': "e75704e1c2mshd99b5c5f595246bp19e6dajsn4f38aacd6f57",
@@ -48,7 +54,7 @@ def search(gameName):
     }
     key = {"key":"abb52e9723084913a5e0668b3c92523f"}
     
-    name = gameName.replace(" ", "-")
+    name = ((gameName.replace("- ","")).replace(" ", "-")).replace(":","")
 
     url = "https://api.rawg.io/api/games/"+name
     response = requests.get(url, headers=headers, params=key)
@@ -63,27 +69,6 @@ def search(gameName):
     platform_rating = [data['metacritic_platforms'][i]['metascore'] for i in range(len(data['metacritic_platforms']))]
 		
     return game_description, game_image, game_rating, platform_name, platform_rating, website_link
-   
-'''
-#GETTING THE GAMES ON A PLATFORM
-import requests
-import json
-
-page = 1
-while(page <= 3):
-  url = "https://api.rawg.io/api/games?platforms=187"
-
-  key = {"key":"abb52e9723084913a5e0668b3c92523f", "page":str(page), "page_size":"39"}
-  page += 1
-  headers = {
-        'x-rapidapi-key': "e75704e1c2mshd99b5c5f595246bp19e6dajsn4f38aacd6f57",
-        'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com"
-            }
-
-  response = requests.get(url, headers=headers, params=key)
-
-  data = response.json()
-	games_availablePS5 = [(data['results'][i]['name']) for i in range(len(data['results']))]'''
 
 
 #GETTING GAMES BASED ON THE CONSOLE
@@ -93,9 +78,10 @@ def platform_games(p_name):
 										"Nintendo": "7"}
     #p_name = input("Choose your platform, (PC, Playstation 5, Xbox Series S/X): ") #to be replaced by the data from html
     id_no = platform_ids[p_name]
+    url = "https://api.rawg.io/api/games?platforms="+id_no
+    
     while(page <= 5):
-        url = "https://api.rawg.io/api/games?platforms="+id_no
-
+        
         key = {"key":"abb52e9723084913a5e0668b3c92523f", "page":str(page), "page_size":"39"}
         page += 1
         headers = {

@@ -4,75 +4,122 @@
 <html>
   
   <head>
+     <title>Easy Games</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
 <!-- 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nav.css') }}"> -->
-    <title>Easy Games</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/d2b21a0d45.js" crossorigin="anonymous"></script>
+   
   </head>
   
-<!--   nav bar -->
-  <body>
-    
-    <div class="topnav">
-			<a class="active" href="/">Home</a>
-			 <a href="/platform">Gaming Platforms</a>
-			<a href="/trending">Trending Games</a>
-			<a href="/anticipated">Upcoming Games</a>
-			<a href="/about">About Us</a>
-		</div>
-<!--  navigation bar    
-<div class="topnav">
-      <p><a href="{{ url_for('trending') }}">Trending</a></p>
-      <a class="active" href="#home">Home</a>
-      
-    </div>
--->
-    
-    <div class = "header">
-      
-      <p><a><ul>
-        Welcome To Easy Games!
-        </ul></a></p>
-    </div>
-    
-    <div class = "description">
-      <a>Hit search to find out about your favorite video game!</a>
-    </div>
-    
-    
-<!--     drop down  -->
-    
-    <div class = "dropdown">
-      <p><a><ul>
-<!--       <label for="console">Choose a Console:</label>
-        
-      <form>
-          <select type = "select" name="console">    
-          <option value="PS4">PS4</option>
-          <option value="XboxOne">Xbox One</option>
-        </select>
-          -->
-   
-        <form action = "/search" method ="POST">
-          
-        <label for="game">Enter a Video Game:</label>
-        <input type="text" name="name" placeholder="Search..."/>
-<!--         <input type="submit" name="submit" value = "Search"/> -->
-        <button type = "submit">Search</button>
-      <br><br><br>
-        
-<!--       <button>Search</button> -->
-    </form>
-       
-      </ul>
-      </a>
-      </p>
-    </div>
-		<div class="More" style="color:gold;font-family:'Courier New';text-align:center;">
-				 <p>To search based on console, click the "Gaming Platform" page!</p>
-				 <p>To look at the trending games, go to the "Trending Games" page!</p>
-		</div> 
-    
 
+  <body>
+    <section class="colored-section" id="title">
+    <div class="container-fluid">
+          <!--   nav bar -->
+            <!--<div class="topnav"> -->
+           <nav class="navbar navbar-expand-lg navbar-dark">
+            <a style=padding-right:100px; class="navbar-brand" href="">EasyGames</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/platform">Gaming Platforms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/trending">Trending Games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/anticipated">Upcoming Games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#pricing">About Us</a>
+                  </li>
+              </ul>
+             </div>
+            </nav>
+          <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="big-heading">Get Important Info About Your Favorite Game!</h1>
+                </div>
+            <div class="col-lg-6">
+                    <img src="/static/ps5.png" alt="ps5-mockup" class="title-image">
+                    
+                </div>
+           
+          </div>
+       </div>
+    </section>
+    <!--</div> -->
+      <!--  navigation bar    
+      <div class="topnav">
+            <p><a href="{{ url_for('trending') }}">Trending</a></p>
+            <a class="active" href="#home">Home</a>
+
+          </div>
+      -->
+    <section class="white-section" id="testimonials">
+      <div class="container-fluid">
+          <div>
+           <h1 class="section-heading"> <a>
+              Welcome To Easy Games!
+             </a></h1>
+          </div>
+
+          <div >
+            <p style="color: #F75443; font-family: Ubuntu;" class="section-heading">
+            <a>Hit search to find out about your favorite video game!</a>
+            </p>
+          </div>
+      <!--     drop down  -->
+            
+      <!--       <label for="console">Choose a Console:</label>
+
+            <form>
+                <select type = "select" name="console">    
+                <option value="PS4">PS4</option>
+                <option value="XboxOne">Xbox One</option>
+              </select>
+                -->
+              
+              <form action = "/search" method ="POST">
+
+              <label style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;" for="game">Enter a Video Game: </label>
+              <input type="text" name="name" placeholder="Search..."/>
+      <!--         <input type="submit" name="submit" value = "Search"/> -->
+              <button type = "submit" class="btn btn-lg btn-dark download-button">Search</button>
+
+      <!--       <button>Search</button> -->
+          </form>
+          <div >
+               <p style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;">To search based on console, click the "Gaming Platform" page!</p>
+               <p style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;">To look at the trending games, go to the "Trending Games" page!</p>
+          </div>
+      </div>
+    </section>
+    <section class="colored-section" id="pricing">
+       <div class="container-fluid">
+          <h1 class="section-heading">What Is EasyGames?</h1>
+        <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">Easy Games is a ONE-STOP-SHOP for all the gaming information you need</p>
+        <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">Search for a particular video game on Home page</p>
+        <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">See games available on different platforms from the Gaming Platform page</p>
+         <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">Check the Trending Games page to see the HOT GAMES right now</p>
+         <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">Go to the Upcoming Games page to see the most anticipated games for the next year</p>
+      </div>
+    </section>
   </body>
   
 </html>
