@@ -19,39 +19,55 @@
    
   </head>
   <body>
-		 <div class="topnav">
-			<a class="active" href="/">Home</a>
-			 <a href="/platform">Gaming Platforms</a>
-			<a href="/trending">Trending Games</a>
-			<a href="/anticipated">Upcoming Games</a>
-			<a href="/about">About Us</a>
-		</div>
+    <section class="colored-section" id="title">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+            <a style=padding-right:100px; class="navbar-brand" href="">EasyGames</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" href="/platform">Gaming Platforms</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/trending">Trending Games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/anticipated">Upcoming Games</a>
+                  </li>
+              </ul>
+             </div>
+            </nav>
     
-    <div class = "header">
-
-      <p><a><ul>
-        Trending Games!
-        </ul></a></p>
-    </div>
-    
-    
+          <div class = "header" style="color: #fff; font-family: Ubuntu;">
+            <p><a><ul>
+              Trending Games!
+              </ul></a></p>
+          </div>
 			
 <!--    -->
       
-			<div class = "row" id="diplay">
+            <div class = "row" id="diplay">
 
-              {% for names, images in both %}
+                    {% for names, images in both %}
 
-                <div class = "column">
-                 
-                  <a id="image_name" style="color:gold; font-size:30px;font-family:'Courier New"> {{ names}} </a>
-                  <p id="image_card"> <img src={{images}} width="1100" height="550"></p> <br>
-                </div>
-           
-            {% endfor %} 
-      
-            
-			</div>
+                      <div class = "column">
+
+                        <a id="image_name" style="color:white; font-size:30px;font-family:Ubuntu;"> {{ names}} </a>
+                        <p id="image_card"> <img src={{images}} width="1100" height="550"></p> <br>
+                      </div>
+
+                  {% endfor %} 
+
+
+            </div>
+      </div>
+    </section>
       
   </body>
 </html>

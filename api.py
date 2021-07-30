@@ -1,4 +1,5 @@
-#these are the most anticipated games of 2022
+import requests
+import json
 
 '''
 - removing html tags from search function (game_description has tags)
@@ -6,9 +7,6 @@
 - performing integration testing
 
 '''
-
-import requests
-import json
 
 # GETTING THE MOST ANTICIPATED GAMES OF THE 2022 AND THEIR BACKGROUND IMAGES
 def anticipated_games():
@@ -62,7 +60,7 @@ def search(gameName):
     data = response.json()
 
     game_description = data['description']
-    game_rating = data['metacritic'] #CHANGES to Remove tags
+    game_rating = data['metacritic'] 
     game_image = data['background_image']
     website_link = data["website"]
     platform_name = [data['metacritic_platforms'][i]['platform']['name'] for i in range(len(data['metacritic_platforms']))]
@@ -81,7 +79,6 @@ def platform_games(p_name):
     url = "https://api.rawg.io/api/games?platforms="+id_no
     
     while(page <= 5):
-        
         key = {"key":"abb52e9723084913a5e0668b3c92523f", "page":str(page), "page_size":"39"}
         page += 1
         headers = {

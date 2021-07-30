@@ -1,7 +1,12 @@
 from flask import Flask, request, render_template
 from api import anticipated_games,the_most_popular,search,platform_games
-import html 
 
+import re
+
+def cleanhtml(raw_html):
+  cleanr = re.compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
+  cleantext = re.sub(cleanr, '', raw_html)
+  return cleantext
 
 app = Flask(__name__)
 
@@ -19,8 +24,8 @@ def home_post():
 	#print(name)
 	try:
 		detail, image, rate, platform, platformRate,website = search(name)
-		print(html.unescape(detail))
-		return render_template("search.html", name=name.upper(), detail=html.unescape(detail), 
+		print(detail)
+		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
 													 image=image, rate=rate, website=website, both=zip(platform,platformRate))#website=website,
 	except:
 		return '<script>window.alert("Your search keyword was not found. Try again!"); window.open("/home")</script>'
