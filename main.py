@@ -40,6 +40,7 @@ def trending():
 def platform():
 	return render_template("platform.html")
 
+
 #@app.route("/platform")
 #def platform_post():
   #pass
