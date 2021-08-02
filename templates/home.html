@@ -22,11 +22,9 @@
   
 
   <body>
-    <section class="colored-section" id="title">
-    <div class="container-fluid">
-          <!--   nav bar -->
-            <!--<div class="topnav"> -->
-           <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="colored-section" id="title">
+
+         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">   
             <a style=padding-right:100px; class="navbar-brand" href="">EasyGames</a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -45,37 +43,46 @@
                   <li class="nav-item">
                     <a class="nav-link" href="/anticipated">Upcoming Games</a>
                   </li>
-                  <li class="nav-item">
+<!--                   <li class="nav-item">
                     <a class="nav-link" href="#pricing">About Us</a>
-                  </li>
+                  </li> -->
               </ul>
              </div>
-            </nav>
-          <div class="row">
+            </nav>    
+           
+          <div class="container-fluid row">
                 <div class="col-lg-6">
                     <h1 class="big-heading">Get Important Info About Your Favorite Game!</h1>
                 </div>
             <div class="col-lg-6">
-                    <img src="/static/ps5.png" alt="ps5-mockup" class="title-image">
+                    <form action = "/search" method ="POST">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                 <div class="alert alert-{{ category }}">
+                   {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+              <label style="color: white; font-family: Ubuntu; font-size: 1.5rem;" for="game">Enter a Video Game: </label>
+              <br>
+              <input type="text" name="name" placeholder="Search..."/>
+      <!--         <input type="submit" name="submit" value = "Search"/> -->
+              <button type = "submit" class="btn btn-lg btn-dark download-button">Search</button>
+
+      <!--       <button>Search</button> -->
+          </form>
                     
                 </div>
            
           </div>
-       </div>
-    </section>
-    <!--</div> -->
-      <!--  navigation bar    
-      <div class="topnav">
-            <p><a href="{{ url_for('trending') }}">Trending</a></p>
-            <a class="active" href="#home">Home</a>
-
-          </div>
-      -->
-    <section class="white-section" id="testimonials">
+      
+      <div class="white-section" id="testimonials">
       <div class="container-fluid">
           <div>
            <h1 class="section-heading"> <a>
-              Welcome To Easy Games!
+              Welcome To EasyGames!
              </a></h1>
           </div>
 
@@ -95,21 +102,18 @@
               </select>
                 -->
               
-              <form action = "/search" method ="POST">
-
-              <label style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;" for="game">Enter a Video Game: </label>
-              <input type="text" name="name" placeholder="Search..."/>
-      <!--         <input type="submit" name="submit" value = "Search"/> -->
-              <button type = "submit" class="btn btn-lg btn-dark download-button">Search</button>
-
-      <!--       <button>Search</button> -->
-          </form>
+              
           <div >
                <p style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;">To search based on console, click the "Gaming Platform" page!</p>
                <p style="color: #F75443; font-family: Ubuntu; font-size: 1.5rem;">To look at the trending games, go to the "Trending Games" page!</p>
           </div>
       </div>
-    </section>
+    </div>
+
+    </div>
+
+    
+    
     <section class="colored-section" id="pricing">
        <div class="container-fluid">
           <h1 class="section-heading">What Is EasyGames?</h1>
@@ -120,6 +124,11 @@
          <p style="color: #fff; font-family: Ubuntu; font-size: 1.5rem;">Go to the Upcoming Games page to see the most anticipated games for the next year</p>
       </div>
     </section>
+    
+    <footer>
+      footer content
+    
+    </footer>
   </body>
   
 </html>

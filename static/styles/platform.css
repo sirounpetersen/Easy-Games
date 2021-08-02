@@ -327,3 +327,18 @@ button.download-button {
     padding-top: 30px;
     
 }
+
+nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
+  background-color: #F75443;
+  padding: 0 30px;
+}
+
+div.header {
+  text-align: center;
+}
+
+footer{
+  height: 100px;
+  color: white;
+  background-color: #ad473d;
+}

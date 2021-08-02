@@ -55,6 +55,7 @@ def search(gameName):
     name = ((gameName.replace("- ","")).replace(" ", "-")).replace(":","")
 
     url = "https://api.rawg.io/api/games/"+name
+    #ERROR HANDLING
     response = requests.get(url, headers=headers, params=key)
 
     data = response.json()
@@ -64,7 +65,11 @@ def search(gameName):
     game_image = data['background_image']
     website_link = data["website"]
     platform_name = [data['metacritic_platforms'][i]['platform']['name'] for i in range(len(data['metacritic_platforms']))]
-    platform_rating = [data['metacritic_platforms'][i]['metascore'] for i in range(len(data['metacritic_platforms']))]
+    platform_rating = []
+    if game_rating == None: #game_rating = None
+        platform_rating.append("No ratings available")
+    else:
+        platform_rating = [data['metacritic_platforms'][i]['metascore'] for i in range(len(data['metacritic_platforms']))]
 		
     return game_description, game_image, game_rating, platform_name, platform_rating, website_link
 
@@ -92,3 +97,23 @@ def platform_games(p_name):
         games_available = [(data['results'][i]['name']) for i in range(len(data['results']))]
 
         return games_available
+			
+# GETTING PRICES FOR GAMES
+def pricelookup(name):
+    params = {
+                'api_key': '165DFEB03D1E4603869943DA6574781D',
+                'type': 'search',
+                'ebay_domain': 'ebay.com',
+                'search_term': name
+              }
+    response = requests.get('https://api.countdownapi.com/request', params)
+    
+    data = response.json()
+    
+    game_name = [data["search_results"][i]["title"] for i in range(len(data["search_results"]))]
+    game_price = [data["search_results"][i]["prices"][0]["raw"] for i in range(len(data["search_results"]))]
+    game_condition = [data["search_results"][i]["condition"] for i in range(len(data["search_results"]))]
+    buying_site = [data["search_results"][i]["link"] for i in range(len(data["search_results"]))]
+    
+    return game_name, game_price, game_condition, buying_site
+

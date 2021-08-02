@@ -8,11 +8,13 @@ body {
 }
 
 .topnav {
+  
   background-color: #243f40;
   overflow: hidden;
 	position:fixed;
 	top:0;
 	width:100%;
+  
 }
 
 /* Style the links inside the navigation bar */
@@ -96,6 +98,7 @@ body {
 
 
 .dropdown button {
+
     background-color:#243f40;
     color: white;
     padding: 20px;
@@ -194,8 +197,7 @@ button.download-button {
 
 
 #title .container-fluid {
-    padding:3% 15% 7%;
-    text-align: left;
+    text-align: center;
 }
 
 /* Title-image */
@@ -291,6 +293,10 @@ button.download-button {
     margin: 20px 10px;
 }
 
+div#testimonials.white-section {
+  text-align: center;
+}
+
 @media (max-width: 1028px) {
 
     .title-image {
@@ -316,4 +322,26 @@ button.download-button {
     font-weight: bold;
     padding-top: 30px;
     
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
+  background-color: #F75443;
+  padding: 0 30px;
+}
+
+div.container-fluid.row {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+button.btn.btn-lg.btn-dark.download-button {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+footer{
+  height: 100px;
+  color: white;
+  background-color: #ad473d;
 }

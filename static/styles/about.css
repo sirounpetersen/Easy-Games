@@ -316,3 +316,9 @@ button.download-button {
     padding-top: 30px;
     
 }
+
+footer{
+  height: 100px;
+  color: white;
+  background-color: #ad473d;
+}

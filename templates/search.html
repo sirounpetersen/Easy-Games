@@ -19,42 +19,74 @@
     <script src="https://kit.fontawesome.com/d2b21a0d45.js" crossorigin="anonymous"></script>
   </head>
   <body>
-		 <div class="topnav">
-			<a class="active" href="/">Home</a>
-			 <a href="/platform">Gaming Platforms</a>
-			<a href="/trending">Trending Games</a>
-			<a href="/anticipated">Upcoming Games</a>
-			<a href="/about">About Us</a>
-		</div>
+   <section class="colored-section" id="title">
     
-	    <div class = "header">
+         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <a style=padding-right:100px; class="navbar-brand" href="/">EasyGames</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item ">
+                     <a class="nav-link" href="/platform">Gaming Platforms</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/trending">Trending Games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/anticipated">Upcoming Games</a>
+                  </li>
+              </ul>
+             </div>
+            </nav>
+ 
+      <div class="container-fluid">
+        <div class = "header" style="color: #fff; font-family: Ubuntu;">
 
-      <p><a><ul>
-        Your Game Details!
-        </ul></a></p>
-			</div>
-	    
-    
-    
-      <div class = "description">
+        <p><a><ul>
+          Your Game Details!
+          </ul></a></p>
+        </div>
+
+        <div class = "description" style="color: #fff; font-family: Ubuntu;">
+
+
+          <a > {{name}}  Average Rating: {{rate}}/100 </a>
+          <p><img src={{image}} width="1100" height="550"></p>
+          <d> {{detail}} </d> <br>
+          <a> Rating based on Platform</a>
+          <div class = "container" id = "rate">
+
+          {% for platform,platformRate in both if platform!= [] %}
+                    <p >{{platform}} players rated this game {{platformRate}}/100</p>
+              {% else %}
+                    <p>No ratings available</p>
+          {% endfor%}
+          
+          </div>
+          <div class = "button">
+            <a href={{website}}><button> Learn More </button> </a>
+          </div>
+       </div>
         
-        
-        <a> {{name}}  Average Rating: {{rate}}/100 </a>
-        <p><img src={{image}} width="1100" height="550"></p>
-        <d> {{detail}} </d> <br>
-        <a> Rating based on Platform</a>
-				<div class = "container" id = "rate">
-					
-				
-        {% for platform,platformRate in both %}
-            <p>{{platform}} players rated this game {{platformRate}}/100</p>
-        {% endfor%}
-				</div>
-        <button><a href={{website}}>Learn More</a></button>
      </div>
+     
+    </section>
     
     
+
     
+   
+    
+
+     <footer>
+      footer content
+    
+    </footer>
 
   </body>
   
