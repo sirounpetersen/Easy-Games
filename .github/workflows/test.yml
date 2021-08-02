@@ -17,4 +17,6 @@ jobs:
           python -m pip install --upgrade pip pytest
           pip3 install flask
           
-          
+      - name: Test webpages
+        run: |
+          python3 tests/tests.py
