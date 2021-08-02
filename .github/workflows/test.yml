@@ -19,4 +19,4 @@ jobs:
           
       - name: Test webpages
         run: |
-          python3 tests/tests.py
+          python3 -m unittest tests/tests.py
