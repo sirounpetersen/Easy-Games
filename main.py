@@ -39,6 +39,8 @@ def home_post():
 
 
 a, b = the_most_popular()
+
+
 @app.route("/trending")  # Changing the navbar to trending
 def trending():
     global a
