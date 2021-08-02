@@ -29,7 +29,7 @@ def home_post():
     try:
         detail, image, rate, platform, platformRate, website = search(name)
         if website == "":
-          website = "/notfound"
+            website = "/notfound"
         return render_template("search.html", name=name.upper(),
                                detail=cleanhtml(detail),
                                image=image, rate=rate,
