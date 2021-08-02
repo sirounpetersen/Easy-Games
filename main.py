@@ -58,9 +58,9 @@ def platform():
 @app.route("/platformGames", methods=['POST'])
 def platform_post():
     platformName = request.form.get("console")
-    games = platform_games(platformName)
+    game2, gameplus = platform_games(platformName)
     return render_template('platformGames.html',
-                           console=platformName, games=games)
+                           console=platformName, games=zip(game2,gameplus))
 
 
 c, d = anticipated_games()
@@ -77,6 +77,21 @@ def anticipated():
 def about():
     return render_template("about.html")
 
+@app.route("/notfound")
+def notfound():
+	return render_template("notfound.html")
+
+@app.route("/search/<keyword>") # for turning names into links
+def search_name(keyword):
+	name = keyword.replace("+"," ")
+	print(name)
+	try:
+		detail, image, rate, platform, platformRate,website = search(name)
+		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
+													 image=image, rate=rate, website=website, both=zip(platform,platformRate))
+	except:
+            flash(f'{name} was not found. Try again!')
+            return render_template("home.html")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

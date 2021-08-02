@@ -83,7 +83,7 @@ def platform_games(p_name):
     id_no = platform_ids[p_name]
     url = "https://api.rawg.io/api/games?platforms="+id_no
     
-    while(page <= 5):
+    while(page <= 2):
         key = {"key":"abb52e9723084913a5e0668b3c92523f", "page":str(page), "page_size":"39"}
         page += 1
         headers = {
@@ -96,7 +96,9 @@ def platform_games(p_name):
         data = response.json()
         games_available = [(data['results'][i]['name']) for i in range(len(data['results']))]
 
-        return games_available
+    game_nospace = [game.replace(" ", "+") for game in games_available]
+
+    return games_available, game_nospace
 			
 # GETTING PRICES FOR GAMES
 def pricelookup(name):
