@@ -56,8 +56,10 @@
 			</style>
           <div class = "display" style="color:white; font-size:30px;font-family:Ubuntu;">
                 <h2 style="text-decoration: underline; "> {{console}} </h2>
-                  {% for game in games %}
-                    <p style="color:white; font-size:30px;font-family:Ubuntu;"> {{game}}</p>
+                  {% for game2,gameplus in games %}
+                    <p style="color:white; font-size:30px;font-family:Ubuntu;">
+											<a href=/search/{{gameplus}}>{{game2}}</a>
+										</p>
                   {% endfor %} 
 
           </div>

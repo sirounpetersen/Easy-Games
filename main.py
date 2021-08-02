@@ -18,31 +18,32 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/home")
+@app.route("/home")  # Why do we have this route too
 def home_2():
     return render_template("home.html")
 
 
 @app.route("/search", methods=['POST'])
 def home_post():
-	name = request.form.get('name')
-  try:
-		detail, image, rate, platform, platformRate,website = search(name)
-		if website == "":
-			website = "/notfound"
-		#print(platformRate)	
-		#print(platform)
-		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
-                               image=image, rate=rate, website=website, both=zip(platform,platformRate))
-	except:
-            flash(f'Your search keyword was not found. Try again!')
-            return render_template("home.html")
+    name = request.form.get('name')
+    try:
+        detail, image, rate, platform, platformRate, website = search(name)
+        if website == "":
+          website = "/notfound"
+        return render_template("search.html", name=name.upper(),
+                               detail=cleanhtml(detail),
+                               image=image, rate=rate,
+                               website=website,
+                               both=zip(platform, platformRate))
+    except Exception:
+        flash('Your search keyword was not found. Try again!')
+        return render_template("home.html")
 
 
 a, b = the_most_popular()
 
 
-@app.route("/trending") #Changing the navbar to trending
+@app.route("/trending")  # Changing the navbar to trending
 def trending():
     global a
     global b
@@ -57,9 +58,9 @@ def platform():
 @app.route("/platformGames", methods=['POST'])
 def platform_post():
     platformName = request.form.get("console")
-    game2, gameplus = platform_games(platformName)
+    games = platform_games(platformName)
     return render_template('platformGames.html',
-                           console=platformName, games=zip(game2,gameplus))
+                           console=platformName, games=games)
 
 
 c, d = anticipated_games()
@@ -76,23 +77,6 @@ def anticipated():
 def about():
     return render_template("about.html")
 
-@app.route("/notfound")
-def notfound():
-	return render_template("notfound.html")
-
-@app.route("/search/<keyword>")
-def search_name(keyword):
-	name = keyword.replace("+"," ")
-	#print(name)
-	try:
-		detail, image, rate, platform, platformRate,website = search(name)
-		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
-													 image=image, rate=rate, website=website, both=zip(platform,platformRate))
-	except:
-            flash(f'{name} was not found. Try again!')
-            return render_template("home.html")
-
 
 if __name__ == '__main__':
-  app.run(debug=True, host="0.0.0.0")
-
+    app.run(debug=True, host="0.0.0.0")
