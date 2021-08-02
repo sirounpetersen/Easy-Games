@@ -62,6 +62,8 @@ def platform_post():
 
 
 c, d = anticipated_games()
+
+
 @app.route("/anticipated")
 def anticipated():
     global c
