@@ -1,7 +1,6 @@
 # Easy-Games
-```
-  Add actions here
-```
+[![Tests](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml/badge.svg)](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml)
+
 
 # This app is now deployed!
    Visit at ``` add link ```
