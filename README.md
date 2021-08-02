@@ -1,5 +1,5 @@
 # Easy-Games
-[![Check Style](https://github.com/sirounpetersen/Easy-Games/actions/workflows/checkStyle.yml/badge.svg)](https://github.com/sirounpetersen/Easy-Games/actions/workflows/checkStyle.yml)
+[![Check Style](https://github.com/sirounpetersen/Easy-Games/actions/workflows/checkStyle.yml/badge.svg?branch=master)](https://github.com/sirounpetersen/Easy-Games/actions/workflows/checkStyle.yml)
 [![Tests](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml/badge.svg)](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml)
 
 
