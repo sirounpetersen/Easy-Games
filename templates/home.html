@@ -83,6 +83,15 @@
             <p style="color: #F75443; font-family: Ubuntu;" class="section-heading">
             <a>Hit search to find out about your favorite video game!</a>
             </p>
+              {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                 <div class="alert alert-{{ category }}">
+                   {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
           </div>
       <!--     drop down  -->
             

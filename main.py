@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash
 from api import anticipated_games,the_most_popular,search,platform_games
 
 import re
@@ -9,7 +9,7 @@ def cleanhtml(raw_html):
   return cleantext
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = '2d6ca153ea201fe4daf5a90f380026b5'
 @app.route("/")
 def home():
 	return render_template("home.html")
@@ -21,15 +21,13 @@ def home_2():
 @app.route("/search", methods=['POST'])
 def home_post():
 	name = request.form.get('name')
-	#print(name)
 	try:
 		detail, image, rate, platform, platformRate,website = search(name)
-		print(detail)
 		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
-													 image=image, rate=rate, website=website, both=zip(platform,platformRate))#website=website,
+                               image=image, rate=rate, website=website, both=zip(platform,platformRate))
 	except:
-		return '<script>window.alert("Your search keyword was not found. Try again!"); window.open("/home")</script>'
-
+            flash('Your search keyword was not found. Try again!')
+            return render_template("home.html")
 
 a,b = the_most_popular()
 @app.route("/trending") #Changing the navbar to trending
