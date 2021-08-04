@@ -1,3 +1,4 @@
+			
 <!DOCTYPE HTML>
 
 <html>
@@ -5,9 +6,9 @@
   <head>
      <title>Easy Games</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/trending.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/search.css') }}">
 <!-- 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/nav.css') }}"> -->
-     <!-- Google Fonts -->
+      <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
 
     <!-- Bootstrap scripts -->
@@ -16,25 +17,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/d2b21a0d45.js" crossorigin="anonymous"></script>
-   
   </head>
   <body>
-    <section class="colored-section" id="title">
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+   <section class="colored-section" id="title">
+    
+         <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
             <a style=padding-right:100px; class="navbar-brand" href="/">EasyGames</a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                 </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                   </li>
                   <li class="nav-item ">
                      <a class="nav-link" href="/platform">Gaming Platforms</a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item ">
                     <a class="nav-link" href="/trending">Trending Games</a>
                   </li>
                   <li class="nav-item">
@@ -43,39 +43,40 @@
               </ul>
              </div>
             </nav>
-    
+ 
       <div class="container-fluid">
         <div class = "header" style="color: #fff; font-family: Ubuntu;">
-            <p><a><ul>
-              Trending Games!
-              </ul></a></p>
-          </div>
-			
-<!--    -->
-      
-            <div class = "row" id="diplay">
 
-                    {% for names, images, plus in both %}
+        <p><a><ul>
+          Price Details!
+          </ul></a></p>
+        </div>
 
-                      <div class = "column">
-												<a style="color:white; font-size:30px;font-family:Ubuntu;" href=/search/{{plus}}> {{names}} </a>
-                       <!-- <a id="image_name" style="color:white; font-size:30px;font-family:Ubuntu;"> {{ names}} </a> -->
-                        <p id="image_card"> <img src={{images}} width="1100" height="550"></p> <br>
-                      </div>
-
-                  {% endfor %} 
+        <div class = "description" style="color: #fff; font-family: Ubuntu;">
 
 
-            </div>
-      </div>
+          {% for game_name,game_price,game_condition, game_link in info %}
+                    <p style="color:white; font-size:30px;font-family:Ubuntu;">Game {{game_name}}, price is {{game_price}}, game condition: {{game_condition}}</p>
+									<div class = "button">
+            			<a href={{game_link}}><button> Check it Out </button> </a>
+          				</div>
+          {% endfor%}
           
-      </div>
+        
+          
+       </div>
+        
+     </div>
+     
     </section>
-    <!--     <footer>
+    
+    
+<!--     <footer>
       footer content
     
     </footer> -->
-      
-  </body>
-</html>
+    
 
+  </body>
+  
+</html>

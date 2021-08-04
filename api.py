@@ -1,12 +1,6 @@
 import requests
 import json
 
-'''
-- removing html tags from search function (game_description has tags)
-- perform unit testing (creating test functions for all the functions below)
-- performing integration testing
-
-'''
 
 # GETTING THE MOST ANTICIPATED GAMES OF THE 2022 AND THEIR BACKGROUND IMAGES
 def anticipated_games():
@@ -26,8 +20,9 @@ def anticipated_games():
         if image_link[i] != None:
             GameName.append(game_name[i])
             ImageLink.append(image_link[i])
-    
-    return GameName, ImageLink
+
+    game_plus = [game.replace(" ", "+") for game in GameName]
+    return GameName, ImageLink,game_plus
 
 #GETTING THE MOST POPULAR GAMES FOR 2021
 def the_most_popular():
@@ -40,9 +35,10 @@ def the_most_popular():
     response = requests.get(url, headers=headers, params=key)
     data = response.json()
     game_name = [data['results'][i]['name'] for i in range(len(data['results']))]
+    game_plus = [game.replace(" ", "+") for game in game_name]
     image_link = [data['results'][i]['background_image'] for i in range(len(data['results']))]
     
-    return game_name, image_link
+    return game_name, image_link,game_plus
 
 #MAKING A GAME SEARCH TO GET GAME DETAILS, GAME RATING, AND RATING BASED ON CONSOLE 
 def search(gameName):
@@ -55,7 +51,7 @@ def search(gameName):
     name = ((gameName.replace("- ","")).replace(" ", "-")).replace(":","")
 
     url = "https://api.rawg.io/api/games/"+name
-    #ERROR HANDLING
+  
     response = requests.get(url, headers=headers, params=key)
 
     data = response.json()

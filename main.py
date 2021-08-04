@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, flash
-from api import anticipated_games, the_most_popular, search, platform_games
+from api import anticipated_games, the_most_popular, search, platform_games,pricelookup
 import re
 
 
@@ -18,7 +18,7 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/home")  # Why do we have this route too
+@app.route("/home") 
 def home_2():
     return render_template("home.html")
 
@@ -26,6 +26,7 @@ def home_2():
 @app.route("/search", methods=['POST'])
 def home_post():
     name = request.form.get('name')
+    name2 = name.replace(" ", "+")
     try:
         detail, image, rate, platform, platformRate, website = search(name)
         if website == "":
@@ -34,20 +35,21 @@ def home_post():
                                detail=cleanhtml(detail),
                                image=image, rate=rate,
                                website=website,
-                               both=zip(platform, platformRate))
+                               both=zip(platform, platformRate), name2=name2)
     except Exception:
         flash('Your search keyword was not found. Try again!')
         return render_template("home.html")
 
 
-a, b = the_most_popular()
+a, b, plus = the_most_popular()
 
 
-@app.route("/trending")  # Changing the navbar to trending
+@app.route("/trending")  
 def trending():
     global a
     global b
-    return render_template("trending.html", both=zip(a, b))
+    global plus
+    return render_template("trending.html", both=zip(a, b, plus))
 
 
 @app.route("/platform")
@@ -63,14 +65,15 @@ def platform_post():
                            console=platformName, games=zip(game2,gameplus))
 
 
-c, d = anticipated_games()
+c, d, gamep = anticipated_games()
 
 
 @app.route("/anticipated")
 def anticipated():
     global c
     global d
-    return render_template("anticipated.html", both=zip(c, d))
+    global gamep
+    return render_template("anticipated.html", both=zip(c, d,gamep))
 
 
 @app.route("/about")
@@ -84,7 +87,6 @@ def notfound():
 @app.route("/search/<keyword>") # for turning names into links
 def search_name(keyword):
 	name = keyword.replace("+"," ")
-	print(name)
 	try:
 		detail, image, rate, platform, platformRate,website = search(name)
 		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
@@ -92,6 +94,18 @@ def search_name(keyword):
 	except:
             flash(f'{name} was not found. Try again!')
             return render_template("home.html")
+
+
+@app.route("/priced/<name2>")
+def price_post(name2):
+  game = name2.replace("+"," ")
+  print(game)
+  game_name, game_price, game_condition, game_link = pricelookup(game)
+	
+  return render_template("priced.html", 
+												 info = zip(game_name,game_price, game_condition,game_link))
+
+	 
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
