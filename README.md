@@ -3,8 +3,8 @@
 [![Tests](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml/badge.svg)](https://github.com/sirounpetersen/Easy-Games/actions/workflows/test.yml)
 
 
-# This app is now deployed!
-   Visit at ``` add link ```
+# Deployed Site!
+   [Easy Games](https://easygames.herokuapp.com/) - Version 1.0
 
 ## Installation
 
