@@ -1,2 +1,2 @@
-web: unicorn main:app
+web: gunicorn main:app
 
