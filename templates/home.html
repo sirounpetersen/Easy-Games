@@ -50,11 +50,16 @@
              </div>
             </nav>    
            
-          <div class="container-fluid row">
-                <div class="col-lg-6">
+          <!-- <div class="container-fluid row">
+                <div class="col-lg-6"> -->
+                    <br><br><br><br>
                     <h1 class="big-heading">Get Important Info About Your Favorite Game!</h1>
-                </div>
-            <div class="col-lg-6">
+                    <br><br>
+                    
+                <!-- </div>
+          </div> -->
+            <!-- <div class="col-lg-6"> -->
+              
                     <form action = "/search" method ="POST">
                 {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -65,18 +70,21 @@
               {% endfor %}
             {% endif %}
           {% endwith %}
-              <label style="color: white; font-family: Ubuntu; font-size: 1.5rem;" for="game">Enter a Video Game: </label>
+            
+              <label style="color: white; font-family: Ubuntu; font-size: 2rem;" for="game">Enter a Video Game: </label>
               <br>
-              <input type="text" name="name" placeholder="Search..."/>
-      <!--         <input type="submit" name="submit" value = "Search"/> -->
+              <input style = "font-size: 20px; width" type="text" name="name" placeholder="Search..."/>
+    
               <button type = "submit" class="btn btn-lg btn-dark download-button">Search</button>
 
       <!--       <button>Search</button> -->
+          
           </form>
+          <br><br>
                     
-                </div>
+                <!-- </div> -->
            
-          </div>
+          
       
       <div class="white-section" id="testimonials">
       <div class="container-fluid">
