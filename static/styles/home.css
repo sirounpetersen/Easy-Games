@@ -3,8 +3,7 @@
 body {
   margin: 0;
   font-family: Comfortaa,Arial, Helvetica, sans-serif;
-  background-color:#F75443;
-  
+  background-color:rgb(240, 105, 90);  
 }
 
 .topnav {
@@ -155,13 +154,13 @@ p {
 /* Sections */
 
 .colored-section {
-    background-color: #F75443;
+    background-color: rgb(240, 105, 90);
     color: #fff;
 }
 
 .white-section {
     background-color: #fff;
-    color: #F75443;
+    color: rgb(240, 105, 90);
 }
 
 
@@ -240,7 +239,7 @@ button.download-button {
 /* Testimonial Section */
 
 #testimonials {
-    color: #F75443;
+    color: rgb(240, 105, 90);
     background-color: #fff;
 }
 
@@ -325,7 +324,7 @@ div#testimonials.white-section {
 }
 
 nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
-  background-color: #F75443;
+  background-color: rgb(240, 105, 90);
   padding: 0 30px;
 }
 
