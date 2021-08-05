@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #F75443;
+  background-color: rgb(240, 105, 90);
 	text-align:center;
 }
 
@@ -186,7 +186,7 @@ p {
 /* Sections */
 
 .colored-section {
-    background-color: #F75443;
+    background-color: rgb(240, 105, 90);
     color: #fff;
 }
 
@@ -352,7 +352,7 @@ button.download-button {
 }
 
 nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
-  background-color: #F75443;
+  background-color: rgb(240, 105, 90);
   padding: 0 30px;
 }
 
