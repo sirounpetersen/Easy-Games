@@ -123,16 +123,17 @@ body {
 * {
   box-sizing: border-box;
 }
-/*
-.column {
-  float: left;
-  width: 13.33%;
-  padding: 5px;
-}
+
+
 
 .column a{
-  color: white;
-}*/
+  color:white; 
+  /* font-size:30px; */
+  font-family:Ubuntu; 
+  text-align:center;
+}
+
+
 
 
 /* Clearfix (clear floats) */
@@ -352,7 +353,7 @@ button.download-button {
 }
 
 nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
-  background-color: rgb(240, 105, 90);
+  background-color: rgb(214, 95, 81);
   padding: 0 30px;
 }
 
