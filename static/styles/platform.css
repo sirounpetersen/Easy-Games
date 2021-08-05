@@ -289,6 +289,25 @@ button.download-button {
     padding: 3% 2%
 }
 
+.button button{
+  background-color: #243f40;
+  color: white;
+  text-decoration: none;
+  border-style: none;
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 20px;
+  
+  
+}
+
+
+.button button:hover {
+  background-color: #1a2d2e;
+  
+}
+
 
 /* CTA Section */
 
