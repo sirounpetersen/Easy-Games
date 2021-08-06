@@ -99,7 +99,7 @@ def platform_games(p_name):
 # GETTING PRICES FOR GAMES
 def pricelookup(name):
     params = {
-                'api_key': '9A83FF0CE71F4838B7F29A13BFC33719',
+                'api_key': 'BA7332E6CF724523A1310BB86893D054',
                 'type': 'search',
                 'ebay_domain': 'ebay.com',
                 'search_term': name
