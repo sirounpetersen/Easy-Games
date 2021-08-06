@@ -289,6 +289,25 @@ button.download-button {
     padding: 3% 2%
 }
 
+.button button{
+  background-color: #243f40;
+  color: white;
+  text-decoration: none;
+  border-style: none;
+  width: 150px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 20px;
+  
+  
+}
+
+
+.button button:hover {
+  background-color: #1a2d2e;
+  
+}
+
 
 /* CTA Section */
 
@@ -329,7 +348,7 @@ button.download-button {
 }
 
 nav.navbar.navbar-expand-lg.navbar-dark.sticky-top {
-  background-color: rgb(240, 105, 90);
+  background-color: rgb(214, 95, 81);
   padding: 0 30px;
 }
 
