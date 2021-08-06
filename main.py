@@ -87,10 +87,13 @@ def notfound():
 @app.route("/search/<keyword>") # for turning names into links
 def search_name(keyword):
 	name = keyword.replace("+"," ")
+
 	try:
 		detail, image, rate, platform, platformRate,website = search(name)
 		return render_template("search.html", name=name.upper(), detail=cleanhtml(detail), 
-													 image=image, rate=rate, website=website, both=zip(platform,platformRate))
+													 image=image, rate=rate, 
+													 website=website, both=zip(platform,platformRate),
+													 name2=name.replace(" ","+"))
 	except:
             flash(f'{name} was not found. Try again!')
             return render_template("home.html")
@@ -103,7 +106,8 @@ def price_post(name2):
   game_name, game_price, game_condition, game_link = pricelookup(game)
 	
   return render_template("priced.html", 
-												 info = zip(game_name,game_price, game_condition,game_link))
+												 info = zip(game_name,game_price, 
+																		game_condition,game_link))
 
 	 
 
